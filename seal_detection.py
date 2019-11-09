@@ -54,7 +54,7 @@ def hsv_extraction(image: np.ndarray, hsvLower: int,
     """
     # 画像をHSV形式に変換
     hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
-    # 範囲指定をして二値化
+    # 色の範囲指定をして二値化
     hsv_mask = cv2.inRange(hsv, hsvLower, hsvUpper)
     # 対象の色以外をカット
     masked_img = cv2.bitwise_and(image, image, mask=hsv_mask)
